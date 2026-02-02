@@ -1,0 +1,140 @@
+{% extends 'showcase/base.html' %}
+
+{% block content %}
+<div class="pt-32 pb-20 px-6 bg-white min-h-screen">
+    
+    <div class="container mx-auto max-w-4xl text-center mb-24 fade-up">
+        <p class="text-[#c65d3b] text-sm uppercase tracking-widest mb-4 font-medium">{{ project.category.name }}</p>
+        <h1 class="font-serif text-5xl md:text-7xl font-light mb-8 text-stone-900">{{ project.title }}</h1>
+        <div class="flex justify-center gap-8 text-xs uppercase tracking-widest text-stone-500">
+            {% if project.client_name %}<span>Client: {{ project.client_name }}</span>{% endif %}
+            <span>Date: {{ project.completed_date|date:"F Y" }}</span>
+        </div>
+    </div>
+
+    <div class="container mx-auto max-w-6xl">
+        
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24 mb-32 fade-up group">
+            <div class="w-full md:w-1/2 relative overflow-hidden cursor-zoom-in shadow-2xl" onclick="openLightbox(this)">
+                {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" 
+                     class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                {% endif %}
+            </div>
+            
+            <div class="w-full md:w-1/2">
+                <h3 class="font-serif text-3xl md:text-4xl mb-6 text-stone-800">The Concept</h3>
+                <div class="w-12 h-0.5 bg-[#c65d3b] mb-6"></div>
+                <p class="text-stone-600 leading-relaxed text-lg font-light">
+                    {{ project.description }}
+                </p>
+            </div>
+        </div>
+
+        {% for photo in project.images.all %}
+        <div class="flex flex-col md:flex-row{% if not forloop.counter|divisibleby:2 %}-reverse{% endif %} items-center gap-12 md:gap-24 mb-32 fade-up group">
+            
+            <div class="w-full md:w-1/2 relative overflow-hidden cursor-zoom-in shadow-xl" onclick="openLightbox(this)">
+                <img src="{{ photo.image.url }}" alt="Detail View" 
+                     class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h3 class="font-serif text-3xl mb-4 text-stone-800">Detail View {{ forloop.counter }}</h3>
+                <p class="text-stone-600 leading-relaxed font-light">
+                    {% if photo.caption %}
+                        {{ photo.caption }}
+                    {% else %}
+                        Every texture and angle is meticulously curated to ensure a harmonious balance between aesthetics and functionality.
+                    {% endif %}
+                </p>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="text-center mt-20 border-t border-stone-100 pt-16 max-w-2xl mx-auto fade-up">
+        <h3 class="font-serif text-3xl mb-6">Inspired by this project?</h3>
+        <p class="text-stone-500 mb-8 font-light">Let's discuss how we can transform your space.</p>
+        <div class="flex justify-center gap-6">
+    <a href="{% url 'home' %}#work" class="px-8 py-3 border border-stone-300 text-sm uppercase tracking-widest hover:border-stone-900 hover:bg-stone-900 hover:text-white transition-all">
+        Back to Works
+    </a>
+    
+    <a href="/#contact" class="px-8 py-3 bg-[#c65d3b] text-white text-sm uppercase tracking-widest hover:bg-[#a54d3b] transition-colors">
+        Get a Quote
+    </a>
+</div>
+    </div>
+</div>
+
+<div id="lightbox" class="fixed inset-0 z-[100] bg-stone-900/95 hidden flex items-center justify-center opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
+    
+    <button class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[101]">
+        <i data-lucide="x" class="w-10 h-10"></i>
+    </button>
+    
+    <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[90vw] object-contain shadow-2xl transform scale-95 transition-transform duration-500" onclick="event.stopPropagation()">
+    
+    <p class="absolute bottom-6 left-0 right-0 text-center text-white/70 text-sm uppercase tracking-widest pointer-events-none">
+        Click outside to close
+    </p>
+</div>
+
+<script>
+    function openLightbox(element) {
+        const imgSrc = element.querySelector('img').src;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // Disable scroll on body
+        document.body.style.overflow = 'hidden';
+        
+        // Set image source
+        lightboxImg.src = imgSrc;
+        
+        // Show modal
+        lightbox.classList.remove('hidden');
+        
+        // Small delay to allow 'display: flex' to apply before adding opacity for transition
+        setTimeout(() => {
+            lightbox.classList.remove('opacity-0');
+            lightboxImg.classList.remove('scale-95');
+            lightboxImg.classList.add('scale-100');
+        }, 10);
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // Re-enable scroll
+        document.body.style.overflow = 'auto';
+        
+        // Start fade out
+        lightbox.classList.add('opacity-0');
+        lightboxImg.classList.remove('scale-100');
+        lightboxImg.classList.add('scale-95');
+        
+        // Wait for transition to finish before hiding
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            lightboxImg.src = '';
+        }, 300);
+    }
+    
+    // Refresh Icons inside modal
+    lucide.createIcons();
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    });
+</script>
+{% endblock %}

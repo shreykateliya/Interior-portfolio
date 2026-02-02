@@ -1,0 +1,66 @@
+{% extends 'showcase/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="relative h-[50vh] flex items-center justify-center overflow-hidden bg-stone-900">
+    <div class="absolute inset-0 z-0 opacity-40">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000" 
+             class="w-full h-full object-cover">
+    </div>
+    
+    <div class="relative z-10 text-center text-white px-6 fade-up">
+        <p class="text-sm md:text-base uppercase tracking-[0.3em] mb-4 text-[#c65d3b]">Our Work</p>
+        <h1 class="font-serif text-5xl md:text-7xl font-light">Selected Projects</h1>
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-white min-h-screen">
+    <div class="container mx-auto">
+        
+        <div class="flex flex-wrap justify-center gap-8 mb-20 fade-up">
+            <a href="{% url 'portfolio' %}" 
+               class="text-sm uppercase tracking-widest pb-1 border-b-2 transition-colors 
+               {% if not request.GET.category %}border-stone-900 text-stone-900{% else %}border-transparent text-stone-400 hover:text-stone-900{% endif %}">
+               All
+            </a>
+
+            {% for cat in categories %}
+            <a href="?category={{ cat.slug }}" 
+               class="text-sm uppercase tracking-widest pb-1 border-b-2 transition-colors
+               {% if request.GET.category == cat.slug %}border-stone-900 text-stone-900{% else %}border-transparent text-stone-400 hover:text-stone-900{% endif %}">
+               {{ cat.name }}
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
+            {% for project in projects %}
+            <a href="{% url 'project_detail' project.pk %}" class="group block fade-up">
+                <div class="relative overflow-hidden aspect-[4/5] mb-6 bg-stone-100">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    {% endif %}
+                    
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <span class="bg-white text-stone-900 px-6 py-3 text-xs uppercase tracking-widest">View Project</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <span class="text-[#c65d3b] text-xs uppercase tracking-widest mb-2 block">{{ project.category.name }}</span>
+                    <h3 class="font-serif text-2xl text-stone-900 group-hover:text-[#c65d3b] transition-colors">{{ project.title }}</h3>
+                </div>
+            </a>
+            {% empty %}
+            <div class="col-span-full text-center py-20">
+                <p class="text-stone-500 text-lg">No projects found in this category.</p>
+                <a href="{% url 'portfolio' %}" class="inline-block mt-4 text-[#c65d3b] border-b border-[#c65d3b]">View all works</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+# Python internals
+__pycache__/
+*.py[cod]
+
+# Virtual Environment (Don't upload this!)
+venv/
+env/
+.env
+
+# Database (Don't upload SQLite if using it, though you use MySQL)
+db.sqlite3
+
+# Media (User uploads - usually we don't commit these, but for a portfolio it's up to you)
+# If you want to save your uploaded project images, remove the line below.
+# media/
+
+.DS_Store
+Thumbs.db

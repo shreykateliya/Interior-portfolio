@@ -1,0 +1,83 @@
+{% extends 'showcase/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 20px;">We Build Your Dream Space</h1>
+        <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">
+            At <strong>MISTRI INTERIOR DECOR</strong>, we believe that your home should tell the story of who you are, and be a collection of what you love. 
+        </p>
+        <p style="font-size: 1.1rem; color: #555;">
+            From bespoke furniture crafting to full-scale interior renovations, our team of skilled artisans and designers work together to bring precision, beauty, and functionality to every corner of your property.
+        </p>
+    </div>
+    <div style="flex: 1; min-width: 300px;">
+        <img src="/media/living_1.jpg" alt="Interior Work" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+</div>
+
+<div style="background-color: #f9f9f9; padding: 60px 0; margin-top: 60px;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <span></span>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🏠 Full Interior Design</h3>
+                <p>Complete turnkey solutions for apartments, villas, and offices.</p>
+            </div>
+            <div class="service-card">
+                <h3>🛋️ Bespoke Furniture</h3>
+                <p>Custom-made sofas, dining tables, and beds crafted to your dimensions.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔪 Modular Kitchens</h3>
+                <p>High-gloss, acrylic, and laminate kitchens with smart storage.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚪 Wardrobes & Storage</h3>
+                <p>Floor-to-ceiling sliding wardrobes, walk-in closets, and lofts.</p>
+            </div>
+            <div class="service-card">
+                <h3>💡 False Ceiling & Lighting</h3>
+                <p>Modern POP designs, cove lighting, and electrical planning.</p>
+            </div>
+            <div class="service-card">
+                <h3>🎨 Painting & Wallpaper</h3>
+                <p>Texture painting, royal play, and premium wallpaper installation.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Specific styles for this page */
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .service-card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+        border-left: 4px solid var(--accent);
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+    .service-card h3 {
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
+    .service-card p {
+        color: #777;
+        font-size: 0.95rem;
+    }
+</style>
+{% endblock %}

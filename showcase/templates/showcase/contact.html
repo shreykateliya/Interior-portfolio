@@ -1,0 +1,44 @@
+{% extends 'showcase/base.html' %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.05);">
+    <h1 style="text-align: center; margin-bottom: 30px;">Get a Quote</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div style="margin-bottom: 20px;">
+            <label>Name</label>
+            <div style="margin-top: 5px;">{{ form.name }}</div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label>Email</label>
+            <div style="margin-top: 5px;">{{ form.email }}</div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label>Phone</label>
+            <div style="margin-top: 5px;">{{ form.phone }}</div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label>Project Details</label>
+            <div style="margin-top: 5px;">{{ form.message }}</div>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Send Inquiry</button>
+    </form>
+</div>
+
+<style>
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box; /* Ensures padding doesn't widen the element */
+        font-family: inherit;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,432 @@
+{% extends 'showcase/base.html' %}
+{% load static %} 
+
+{% block content %}
+
+<section class="h-screen w-full relative flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974" 
+             alt="Hero" 
+             class="w-full h-full object-cover scale-110 transition-transform duration-[2s]"
+             id="hero-image">
+    </div>
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+    
+    <div class="relative z-20 text-center text-white px-6 max-w-4xl mx-auto">
+        <p class="text-sm md:text-base uppercase tracking-[0.3em] mb-4 fade-up">Interior & Furniture Design</p>
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight fade-up" style="transition-delay: 0.2s;">
+            <span id="hero-title">MISTRI<br>INTERIOR DECOR</span>
+        </h1>
+        <p class="text-lg md:text-xl font-light mb-10 opacity-90 fade-up" style="transition-delay: 0.4s;">
+            Designing spaces that tell your story.
+        </p>
+        <div class="fade-up" style="transition-delay: 0.6s;">
+            <a href="#work" class="inline-block border-b border-white pb-1 text-sm uppercase tracking-widest hover:text-[#b08d55] hover:border-[#b08d55] transition-colors">
+                View Selected Works
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 md:py-32 px-6 bg-stone-50">
+    <div class="container mx-auto max-w-4xl text-center">
+        <h2 class="font-serif text-3xl md:text-5xl font-light mb-8 leading-relaxed fade-up">
+            "We believe that every piece of furniture tells a story, and every room is a canvas for life's precious moments."
+        </h2>
+        <div class="w-20 h-0.5 bg-[#b08d55] mx-auto mb-6 fade-up"></div>
+        <p class="text-stone-600 text-lg fade-up">Est. 2024 — Ahmedabad, India</p>
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-white overflow-hidden">
+    <div class="container mx-auto max-w-6xl">
+        
+        <div class="flex flex-col md:flex-row items-center gap-16 mb-40 fade-up">
+            <div class="w-full md:w-1/2">
+                <div class="relative group w-full max-w-[400px] mx-auto">
+                    <div class="absolute -inset-4 border border-[#b08d55]/30 rounded-sm scale-95 group-hover:scale-100 transition-transform duration-700"></div>
+                    <div class="relative overflow-hidden rounded-sm shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                        <img src="{% static 'images/story_1.jpg' %}" 
+                             alt="Story 1"
+                             class="w-full h-auto block transform transition-transform duration-[1.5s] group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:pl-10">
+                <span class="text-[#b08d55] text-xs uppercase tracking-[0.2em] mb-4 block font-medium">01. The Concept</span>
+                <h3 class="font-serif text-5xl mb-8 leading-tight">Timeless<br>Elegance</h3>
+                <p class="text-stone-600 leading-relaxed text-lg font-light">
+                    Every corner is meticulously crafted to ensure a blend of luxury and comfort. We don't just fill rooms; we curate atmospheres that age beautifully with time.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-16 mb-40 fade-up">
+            <div class="w-full md:w-1/2">
+                <div class="relative group w-full max-w-[400px] mx-auto">
+                    <div class="absolute -inset-4 border border-[#b08d55]/30 rounded-sm scale-95 group-hover:scale-100 transition-transform duration-700"></div>
+                    <div class="relative overflow-hidden rounded-sm shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                        <img src="{% static 'images/story_2.jpg' %}" 
+                             alt="Story 2"
+                             class="w-full h-auto block transform transition-transform duration-[1.5s] group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-10 text-left md:text-right">
+                <span class="text-[#b08d55] text-xs uppercase tracking-[0.2em] mb-4 block font-medium">02. The Detail</span>
+                <h3 class="font-serif text-5xl mb-8 leading-tight">Artisan<br>Craftsmanship</h3>
+                <p class="text-stone-600 leading-relaxed text-lg font-light">
+                    Hand-carved textures and bespoke joinery define our approach. We collaborate with master craftsmen to ensure every curve and edge speaks of quality.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-16 mb-40 fade-up">
+            <div class="w-full md:w-1/2">
+                <div class="relative group w-full max-w-[400px] mx-auto">
+                    <div class="absolute -inset-4 border border-[#b08d55]/30 rounded-sm scale-95 group-hover:scale-100 transition-transform duration-700"></div>
+                    <div class="relative overflow-hidden rounded-sm shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                        <img src="{% static 'images/story_3.jpg' %}" 
+                             alt="Story 3"
+                             class="w-full h-auto block transform transition-transform duration-[1.5s] group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:pl-10">
+                <span class="text-[#b08d55] text-xs uppercase tracking-[0.2em] mb-4 block font-medium">03. The Space</span>
+                <h3 class="font-serif text-5xl mb-8 leading-tight">Open<br>Living</h3>
+                <p class="text-stone-600 leading-relaxed text-lg font-light">
+                    Designing for flow and light, we open up spaces to breathe. Your home should feel expansive, allowing the architecture to frame your life.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-16 mb-40 fade-up">
+            <div class="w-full md:w-1/2">
+                <div class="relative group w-full max-w-[400px] mx-auto">
+                    <div class="absolute -inset-4 border border-[#b08d55]/30 rounded-sm scale-95 group-hover:scale-100 transition-transform duration-700"></div>
+                    <div class="relative overflow-hidden rounded-sm shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                        <img src="{% static 'images/story_4.jpg' %}" 
+                             alt="Story 4"
+                             class="w-full h-auto block transform transition-transform duration-[1.5s] group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:pr-10 text-left md:text-right">
+                <span class="text-[#b08d55] text-xs uppercase tracking-[0.2em] mb-4 block font-medium">04. The Material</span>
+                <h3 class="font-serif text-5xl mb-8 leading-tight">Natural<br>Textures</h3>
+                <p class="text-stone-600 leading-relaxed text-lg font-light">
+                    We prioritize sustainable, natural materials like reclaimed teak, Italian marble, and raw linen to bring an organic warmth to modern designs.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-16 fade-up">
+            <div class="w-full md:w-1/2">
+                <div class="relative group w-full max-w-[400px] mx-auto">
+                    <div class="absolute -inset-4 border border-[#b08d55]/30 rounded-sm scale-95 group-hover:scale-100 transition-transform duration-700"></div>
+                    <div class="relative overflow-hidden rounded-sm shadow-xl transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl">
+                        <img src="{% static 'images/story_5.jpg' %}" 
+                             alt="Story 5"
+                             class="w-full h-auto block transform transition-transform duration-[1.5s] group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 md:pl-10">
+                <span class="text-[#b08d55] text-xs uppercase tracking-[0.2em] mb-4 block font-medium">05. The Finish</span>
+                <h3 class="font-serif text-5xl mb-8 leading-tight">Perfect<br>Execution</h3>
+                <p class="text-stone-600 leading-relaxed text-lg font-light">
+                    From the first sketch to the final coat of polish, MISTRI ensures flawless execution. We obsess over the details so you don't have to.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="work" class="py-20 px-6 bg-stone-50">
+    <div class="container mx-auto">
+        
+        <div class="text-center mb-16 fade-up">
+            <h2 class="font-serif text-4xl md:text-5xl font-light mb-4">Our Projects</h2>
+            <div class="w-20 h-0.5 bg-[#b08d55] mx-auto"></div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 mb-16 fade-up">
+            <button class="filter-btn active text-sm uppercase tracking-widest border-b-2 border-stone-900 pb-1" data-filter="all">All</button>
+            {% for cat in categories %}
+            <button class="filter-btn text-sm uppercase tracking-widest border-b-2 border-transparent text-stone-400 hover:text-stone-900 transition-colors pb-1" 
+                    data-filter="{{ cat.slug }}">
+                {{ cat.name }}
+            </button>
+            {% endfor %}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+            {% for project in projects %}
+            <div class="project-card group cursor-pointer fade-up" data-category="{{ project.category.slug }}">
+                <div class="relative overflow-hidden aspect-[4/5] mb-4">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" 
+                         alt="{{ project.title }}" 
+                         class="w-full h-full object-cover transition-transform duration-700">
+                    {% endif %}
+                    
+                    <a href="{% url 'project_detail' project.pk %}" class="project-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-white text-sm uppercase tracking-widest border-b border-white pb-1">View Project</span>
+                    </a>
+                </div>
+                <h3 class="font-serif text-2xl mb-1">{{ project.title }}</h3>
+                <p class="text-stone-500 text-sm">{{ project.category.name }}</p>
+            </div>
+            {% empty %}
+            <p>No projects found.</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-stone-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" 
+         style="background-image: radial-gradient(#b08d55 1px, transparent 1px); background-size: 30px 30px;">
+    </div>
+
+    <div class="container mx-auto max-w-6xl relative z-10">
+        
+        <div class="text-center mb-20 fade-up">
+            <span class="text-[#b08d55] text-xs uppercase tracking-[0.2em] mb-4 block">The Mistri Standard</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-light text-white">Why Choose Us</h2>
+            <div class="w-24 h-px bg-[#b08d55] mx-auto mt-8"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            
+            <div class="text-center px-6 fade-up group">
+                <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full border border-[#b08d55] text-[#b08d55] group-hover:bg-[#b08d55] group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(176,141,85,0.2)]">
+                    <i data-lucide="gem" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Premium Quality</h3>
+                <p class="text-stone-400 font-light leading-relaxed">
+                    We source only the finest materials from around the globe, ensuring longevity and timeless appeal in every inch of your space.
+                </p>
+            </div>
+
+            <div class="text-center px-6 pt-12 md:pt-0 fade-up group" style="transition-delay: 0.1s;">
+                <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full border border-[#b08d55] text-[#b08d55] group-hover:bg-[#b08d55] group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(176,141,85,0.2)]">
+                    <i data-lucide="ruler" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-2xl mb-4 text-white">Tailored to You</h3>
+                <p class="text-stone-400 font-light leading-relaxed">
+                    No two homes are alike. We reject templates, creating bespoke furniture and layouts that fit your specific lifestyle perfectly.
+                </p>
+            </div>
+
+            <div class="text-center px-6 pt-12 md:pt-0 fade-up group" style="transition-delay: 0.2s;">
+                <div class="mb-8 inline-flex items-center justify-center w-20 h-20 rounded-full border border-[#b08d55] text-[#b08d55] group-hover:bg-[#b08d55] group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(176,141,85,0.2)]">
+                    <i data-lucide="clock" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-2xl mb-4 text-white">On-Time Delivery</h3>
+                <p class="text-stone-400 font-light leading-relaxed">
+                    We value your time. Our rigorous project management ensures we hand over your dream space exactly when promised, no delays.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="studio" class="py-24 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="fade-up">
+                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2000" 
+                     class="w-full h-[600px] object-cover image-reveal">
+            </div>
+            <div class="lg:pl-12 fade-up">
+                <p class="text-[#b08d55] text-sm uppercase tracking-widest mb-4">The Studio</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-8">Where Vision Meets Craftsmanship</h2>
+                <div class="space-y-6 text-stone-600 leading-relaxed">
+                    <p>Atelier MISTRI is a multidisciplinary design studio specializing in bespoke interiors and custom furniture. Our work bridges the gap between architectural space and human emotion.</p>
+                    <p>We approach each project as a unique narrative, blending natural materials with contemporary forms. Our furniture pieces are handcrafted by local artisans, ensuring sustainability and unmatched quality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-24 px-6 bg-stone-50">
+    <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-20 fade-up">
+            <h2 class="font-serif text-4xl md:text-5xl font-light mb-4">Services</h2>
+            <p class="text-stone-500">Comprehensive design solutions tailored to your needs</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group fade-up">
+                <div class="mb-6 overflow-hidden h-64">
+                    <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="font-serif text-2xl mb-3">Interior Architecture</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Full-service interior design including space planning, material selection, and project management.</p>
+            </div>
+            <div class="group fade-up" style="transition-delay: 0.1s;">
+                <div class="mb-6 overflow-hidden h-64">
+                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="font-serif text-2xl mb-3">Custom Furniture</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Bespoke furniture design and fabrication. Statement pieces crafted by master artisans.</p>
+            </div>
+            <div class="group fade-up" style="transition-delay: 0.2s;">
+                <div class="mb-6 overflow-hidden h-64">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f6f?w=800" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <h3 class="font-serif text-2xl mb-3">Design Consultation</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Expert guidance for design direction, color palettes, material boards, and spatial optimization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 px-6 bg-stone-900 text-white">
+    <div class="container mx-auto max-w-4xl">
+        <div class="text-center mb-16 fade-up">
+            <p class="text-[#b08d55] text-sm uppercase tracking-widest mb-4">Get In Touch</p>
+            <h2 class="font-serif text-4xl md:text-5xl font-light">Let's Create Something Beautiful</h2>
+        </div>
+
+        <form method="post" action="{% url 'contact' %}" class="space-y-6 fade-up">
+            {% csrf_token %}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs uppercase tracking-widest mb-2 text-stone-400">Name</label>
+                    <input type="text" name="name" required class="w-full bg-transparent border-b border-stone-700 py-3 focus:outline-none focus:border-[#b08d55] transition-colors" placeholder="Your Name">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest mb-2 text-stone-400">Email</label>
+                    <input type="email" name="email" required class="w-full bg-transparent border-b border-stone-700 py-3 focus:outline-none focus:border-[#b08d55] transition-colors" placeholder="your@email.com">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs uppercase tracking-widest mb-2 text-stone-400">Phone</label>
+                <input type="text" name="phone" class="w-full bg-transparent border-b border-stone-700 py-3 focus:outline-none focus:border-[#b08d55] transition-colors" placeholder="+91 ...">
+            </div>
+            <div>
+                <label class="block text-xs uppercase tracking-widest mb-2 text-stone-400">Message</label>
+                <textarea name="message" rows="4" required class="w-full bg-transparent border-b border-stone-700 py-3 focus:outline-none focus:border-[#b08d55] transition-colors resize-none" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <div class="text-center pt-6">
+                <button type="submit" class="px-10 py-4 bg-[#b08d55] text-white text-sm uppercase tracking-widest hover:bg-[#8e6e42] transition-colors duration-300">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Parallax Hero
+    const heroImage = document.getElementById('hero-image');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        if(heroImage) heroImage.style.transform = `translateY(${scrolled * 0.5}px) scale(1.1)`;
+    });
+
+    // Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.classList.remove('active', 'border-stone-900', 'text-stone-900');
+                b.classList.add('border-transparent', 'text-stone-400');
+            });
+            btn.classList.add('active', 'border-stone-900', 'text-stone-900');
+            btn.classList.remove('border-transparent', 'text-stone-400');
+
+            const filter = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => { card.style.display = 'none'; }, 300);
+                }
+            });
+        });
+    });
+
+    // Text Scramble Effect
+    class TextScramble {
+        constructor(el) {
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.update = this.update.bind(this);
+        }
+        setText(newText) {
+            const oldText = this.el.innerText;
+            const length = Math.max(oldText.length, newText.length);
+            const promise = new Promise((resolve) => this.resolve = resolve);
+            this.queue = [];
+            for (let i = 0; i < length; i++) {
+                const from = oldText[i] || '';
+                const to = newText[i] || '';
+                const start = Math.floor(Math.random() * 40);
+                const end = start + Math.floor(Math.random() * 40);
+                this.queue.push({ from, to, start, end });
+            }
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+            return promise;
+        }
+        update() {
+            let output = '';
+            let complete = 0;
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+                let { from, to, start, end, char } = this.queue[i];
+                if (this.frame >= end) {
+                    complete++;
+                    output += to;
+                } else if (this.frame >= start) {
+                    if (!char || Math.random() < 0.28) {
+                        char = this.randomChar();
+                        this.queue[i].char = char;
+                    }
+                    // Color updated to Gold
+                    output += `<span class="text-[#b08d55]">${char}</span>`;
+                } else {
+                    output += from;
+                }
+            }
+            this.el.innerHTML = output;
+            if (complete === this.queue.length) {
+                this.resolve();
+            } else {
+                this.frameRequest = requestAnimationFrame(this.update);
+                this.frame++;
+            }
+        }
+        randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
+    }
+
+    // Trigger Scramble
+    window.addEventListener('load', () => {
+        const el = document.getElementById('hero-title');
+        const fx = new TextScramble(el);
+        setTimeout(() => {
+            fx.setText("MISTRI\nINTERIOR DECOR");
+        }, 1000);
+    });
+</script>
+{% endblock %}
